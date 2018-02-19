@@ -99,7 +99,7 @@ js::Nursery::updateDecommittedRegion()
         uintptr_t decommitStart = chunk(numActiveChunks_).start();
         uintptr_t decommitSize = heapEnd() - decommitStart;
         JS_ASSERT(decommitStart == AlignBytes(decommitStart, Alignment));
-        JS_ASSERT(decommitSize == AlignBytes(decommitStart, Alignment));
+        JS_ASSERT(decommitSize == AlignBytes(decommitSize, Alignment));
         MarkPagesUnused((void *)decommitStart, decommitSize);
 # endif
     }

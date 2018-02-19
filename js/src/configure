@@ -3713,6 +3713,8 @@ EOF
             _CC_SUITE=11
         elif test "$_CC_MAJOR_VERSION" = "18"; then
             _CC_SUITE=12
+        elif test "$_CC_MAJOR_VERSION" = "19"; then
+            _CC_SUITE=14
         else
             { echo "configure: error: This version ($CC_VERSION) of the MSVC compiler is unsupported. See https://developer.mozilla.org/en/Windows_Build_Prerequisites." 1>&2; echo "configure: error: This version ($CC_VERSION) of the MSVC compiler is unsupported. See https://developer.mozilla.org/en/Windows_Build_Prerequisites." 1>&5; exit 1; }
         fi
@@ -14475,7 +14477,7 @@ if test "${enable_gczeal+set}" = set; then
     { echo "configure: error: Option, gczeal, does not take an argument ($enableval)." 1>&2; echo "configure: error: Option, gczeal, does not take an argument ($enableval)." 1>&5; exit 1; }
   fi
 fi
-
+'''
 if test -n "$JS_GC_ZEAL" -o -n "$MOZ_DEBUG"; then
     cat >> confdefs.pytmp <<\EOF
     (''' JS_GC_ZEAL ''', ' 1 ')
@@ -14485,7 +14487,7 @@ cat >> confdefs.h <<\EOF
 EOF
 
 fi
-
+'''
 # Check whether --enable-perf or --disable-perf was given.
 if test "${enable_perf+set}" = set; then
   enableval="$enable_perf"

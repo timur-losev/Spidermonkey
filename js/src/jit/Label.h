@@ -79,7 +79,7 @@ class Label : public LabelBase
   public:
     ~Label()
     {
-#ifdef DEBUG
+#if defined(DEBUG) && !defined(JS_CODEGEN_NONE)
         // The assertion below doesn't hold if an error occurred.
         if (OOM_counter > OOM_maxAllocations)
             return;
