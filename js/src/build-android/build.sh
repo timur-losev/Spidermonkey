@@ -69,10 +69,11 @@ rm -f ./config.cache
              --disable-debug \
              --disable-gczeal \
              --without-intl-api \
-             --disable-threadsafe
+             --disable-threadsafe \
+             --enable-jemalloc
 
 # make
-make -j15
+make -j8
 
 if [[ $develop ]]; then
     rm ../../../include
@@ -105,14 +106,14 @@ CPU_ARCH=armv6
 RELEASE_ARCH_DIR=armeabi
 GCC_VERSION=4.6
 TOOLNAME_PREFIX=arm-linux-androideabi
-build_with_arch
+#build_with_arch
 
 # Build with armv7
 TOOLS_ARCH=arm-linux-androideabi
 TARGET_NAME=arm-linux-androideabi
 CPU_ARCH=armv7-a
 RELEASE_ARCH_DIR=armeabi-v7a
-GCC_VERSION=4.6
+GCC_VERSION=4.9
 TOOLNAME_PREFIX=arm-linux-androideabi
 build_with_arch
 
@@ -123,4 +124,4 @@ CPU_ARCH=i686
 RELEASE_ARCH_DIR=x86
 GCC_VERSION=4.6
 TOOLNAME_PREFIX=i686-linux-android
-build_with_arch
+#build_with_arch

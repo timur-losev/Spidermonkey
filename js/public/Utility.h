@@ -61,6 +61,7 @@ JS_Assert(const char *s, const char *file, int ln);
 /*
  * Custom allocator support for SpiderMonkey
  */
+#define JS_USE_CUSTOM_ALLOCATOR
 #if defined JS_USE_CUSTOM_ALLOCATOR
 # include "jscustomallocator.h"
 #else

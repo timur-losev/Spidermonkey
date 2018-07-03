@@ -74,6 +74,7 @@ EXPORTS.js += [
     '../public/HashTable.h',
     '../public/HeapAPI.h',
     '../public/Id.h',
+    '../public/jscustomallocator.h',
     '../public/LegacyIntTypes.h',
     '../public/MemoryMetrics.h',
     '../public/OldDebugAPI.h',
