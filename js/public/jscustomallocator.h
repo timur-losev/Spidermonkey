@@ -1185,6 +1185,7 @@ public:
                 FPoolInfo* Pool = *PoolPtr;
                 assert(Pool->PrevLink == PoolPtr);
                 assert(!Pool->FirstMem);
+                (void)Pool;
             }
         }
 
