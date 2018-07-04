@@ -17,19 +17,6 @@
 #define PLATFORM_64BITS 1
 #endif
 
-#ifdef ANDROID
-#include <android/log.h>
-static void
-_my_malloc_message(size_t b)
-{
-  //__android_log_print(ANDROID_LOG_INFO, "GeckoJemalloc", "%d", b);
-}
-#else
-static void
-_my_malloc_message(size_t b)
-{
-}
-#endif
 
 
 #if ENABLE_POOL_ALLOCATOR
