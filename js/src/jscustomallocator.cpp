@@ -234,9 +234,10 @@ extern JS_PUBLIC_API(FMallocBinned*) CreateFMallocBinnedInstance() {
         uint64_t MemoryLimit = std::min<uint64_t>(uint64_t(1) << details::CeilLogTwo(MemoryConstants.TotalPhysical), 0x100000000);
 
         return new FMallocBinned(MemoryConstants.PageSize, MemoryLimit);
-);
-
 #endif
+    }
+
+
 
 #ifdef ANDROID
      void* PlatformMemory::BinnedAllocFromOS(size_t Size)

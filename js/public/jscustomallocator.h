@@ -1408,6 +1408,8 @@ static inline void* js_calloc(size_t bytes)
     #else
         void* data = FMallocBinned::getInstance()->Malloc(bytes, DEFAULT_ALIGNMENT);
         ::memset(data, 0, bytes);
+
+        return data;
     #endif
 }
 
@@ -1419,6 +1421,8 @@ static inline void* js_calloc(size_t nmemb, size_t size)
     #else
         void* data = FMallocBinned::getInstance()->Malloc(nmemb * size, DEFAULT_ALIGNMENT);
         ::memset(data, 0, nmemb * size);
+
+        return data;
     #endif
 }
 
