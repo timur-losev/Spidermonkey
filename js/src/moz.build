@@ -140,6 +140,7 @@ UNIFIED_SOURCES += [
     'jscntxt.cpp',
     'jscompartment.cpp',
     'jscrashreport.cpp',
+    'jscustomallocator.cpp',
     'jsdate.cpp',
     'jsdtoa.cpp',
     'jsexn.cpp',

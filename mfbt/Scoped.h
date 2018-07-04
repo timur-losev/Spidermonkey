@@ -230,7 +230,7 @@ struct ScopedFreePtrTraits
 {
   typedef T* type;
   static T* empty() { return nullptr; }
-  static void release(T* aPtr) { free(aPtr); }
+  static void release(T* aPtr) { js_free(aPtr); }
 };
 SCOPED_TEMPLATE(ScopedFreePtr, ScopedFreePtrTraits)
 
