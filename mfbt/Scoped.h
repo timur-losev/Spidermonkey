@@ -57,6 +57,7 @@
 #include "mozilla/GuardObjects.h"
 #include "mozilla/Move.h"
 #include "mozilla/NullPtr.h"
+#include "js/jscustomallocator.h"
 
 namespace mozilla {
 

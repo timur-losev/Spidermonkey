@@ -120,7 +120,7 @@
                 // if we didn't have MemAvailable (kernels < 3.14 or CentOS 6.x), use free + cached as a (bad) approximation
                 if (MemoryStats.AvailablePhysical == 0)
                 {
-                    MemoryStats.AvailablePhysical = std::min(MemFree + Cached, MemoryStats.TotalPhysical);
+                    //MemoryStats.AvailablePhysical = std::min(MemFree + Cached, MemoryStats.TotalPhysical);
                 }
 
                 fclose(FileGlobalMemStats);
@@ -223,12 +223,12 @@ extern JS_PUBLIC_API(FMallocBinned*) CreateFMallocBinnedInstance() {
 #elif defined ANDROID
 
 	const PlatformMemoryConstants& MemoryConstants = GetConstants();
-	MemoryStats MemoryStats = GetStats();
+	MemStats memoryStats = GetStats();
 
     __android_log_print(ANDROID_LOG_INFO, "Binned allocator", "Memory total: Physical=%.2fMB (%dGB approx) Available=%.2fMB PageSize=%.1fKB",
 		float(MemoryConstants.TotalPhysical/1024.0/1024.0),
 		MemoryConstants.TotalPhysicalGB, 
-		float(MemoryStats.AvailablePhysical/1024.0/1024.0),
+		float(memoryStats.AvailablePhysical/1024.0/1024.0),
 		float(MemoryConstants.PageSize/1024.0));
 
         uint64_t MemoryLimit = std::min<uint64_t>(uint64_t(1) << details::CeilLogTwo(MemoryConstants.TotalPhysical), 0x100000000);

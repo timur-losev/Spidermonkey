@@ -1,5 +1,7 @@
 #pragma once
 
+#include "jstypes.h"
+
 #define ENABLE_POOL_ALLOCATOR 1
 
 #if ENABLE_POOL_ALLOCATOR
